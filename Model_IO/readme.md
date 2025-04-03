@@ -400,4 +400,5 @@ few_shot_structured_llm.invoke("what's something funny about woodpeckers")
 
 
 ## Model output Parsing
+[More about structured output documents](https://python.langchain.com/docs/how_to/structured_output/#the-with_structured_output-method)
 ## Model output Cacheing 

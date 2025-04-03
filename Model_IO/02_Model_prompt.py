@@ -14,12 +14,7 @@ chat_prompt = ChatPromptTemplate(
         ("human","{human}"),
     ]   
 )
-chat_prompt = ChatPromptTemplate(
-    [
-        ("system","Machine learning"),
-        ("human","{human}"),
-    ]   
-)
+
 
 print(chat_prompt,"\n")
 result = model.invoke(chat_prompt)
