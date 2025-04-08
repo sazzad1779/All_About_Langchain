@@ -14,11 +14,11 @@ chat_prompt = ChatPromptTemplate(
         ("human","{human}"),
     ]   
 )
-
-
-print(chat_prompt,"\n")
-result = model.invoke(chat_prompt)
-print(result)
+chain =chat_prompt | model 
+# print(chain)
+# print(chat_prompt,"\n")
+result = chain.invoke({"subject":"ML","human":"tell me about overfitting."})
+# print(result)
 
 ## Example 2
 # human = " i need to know about how to optimize the inference of llm."
@@ -38,15 +38,15 @@ print(result)
 # print(result)
 
 ## Example 3
-chat_prompt = ChatPromptTemplate(
-    [
-        ("system"," you are helpful assistant. you will help to learn ML and note down i dont have prior knowledge."),
-        ("human","{human}"),
-    ]   
-)
-chat_prompt = chat_prompt.invoke(" i need to know about how to optimize the inference of llm.")
+# chat_prompt = ChatPromptTemplate(
+#     [
+#         ("system"," you are helpful assistant. you will help to learn ML and note down i dont have prior knowledge."),
+#         ("human","{human}"),
+#     ]   
+# )
+# chat_prompt = chat_prompt.invoke(" i need to know about how to optimize the inference of llm.")
 
 
-print(chat_prompt,"\n")
-result = model.invoke(chat_prompt)
-print(result)
+# print(chat_prompt,"\n")
+# result = model.invoke(chat_prompt)
+# print(result)
