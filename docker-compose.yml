@@ -1,0 +1,12 @@
+
+services:
+  rag-app:
+    build: .
+    container_name: rag_container
+    ports:
+      - "8099:8099"
+    env_file:
+      - .env
+    command: uv run uvicorn main:app --host 0.0.0.0 --port 8099 --proxy-headers
+
+    restart: unless-stopped
